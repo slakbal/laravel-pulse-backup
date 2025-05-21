@@ -1,0 +1,48 @@
+{
+  "name": "slakbal/laravel-pulse-backup",
+  "description": "A Laravel Pulse card to monitor the health of the spatie backups.",
+  "license": "MIT",
+  "keywords": [
+    "pulse",
+    "backup",
+    "laravel"
+  ],
+  "authors": [
+    {
+      "name": "Leslie Price",
+      "email": "leslie.price78@gmail.com",
+      "role": "Developer"
+    }
+  ],
+  "require": {
+      "illuminate/contracts": "^12.0",
+      "spatie/laravel-backup": "^9.1"
+  },
+  "require-dev": {
+  },
+  "autoload": {
+    "psr-4": {
+      "Slakbal\\LaravelPulseBackup\\": "src/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Slakbal\\LaravelPulseBackup\\Tests\\": "tests/"
+    }
+  },
+  "scripts": {
+    "test": "./vendor/bin/phpunit"
+  },
+  "config": {
+    "sort-packages": true
+  },
+  "extra": {
+    "laravel": {
+      "providers": [
+        "Slakbal\\LaravelPulseBackup\\GotoWebinarServiceProvider"
+      ]
+    }
+  },
+  "minimum-stability": "dev",
+  "prefer-stable": true
+}
