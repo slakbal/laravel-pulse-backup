@@ -21,13 +21,19 @@ class LaravelPulseBackupRecorder
 //        if ($event->time->hour % 2 !== 0) { // Runs at hour 0, 2, 4, etc.
 //            return;
 //        }
+//
+//        if ($event->time->hour % 2 !== 0) { // Runs at hour 0, 2, 4, etc.
+//            info('Pulse Backup: returning on '.$event->time->hour);
+//            return;
+//        }
 
-        if ($event->time->hour % 2 !== 0) { // Runs at hour 0, 2, 4, etc.
-            info('Pulse Backup: returning on '.$event->time->hour);
+//        info('Running Pulse Backup: '.$event->time->hour);
+        if ($event->time->second % 300 !== 0) {
+            info('Returning on: '.$event->time->second);
             return;
         }
 
-        info('Running Pulse Backup: '.$event->time->hour);
+        info('Running on: '.$event->time->second);
 
         //        if ($event->time !== $event->time->startOfDay()->addHours(2)) {
 //            return;
