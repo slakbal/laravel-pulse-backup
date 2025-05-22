@@ -14,30 +14,12 @@ class LaravelPulseBackupRecorder
 
     public function record(SharedBeat $event): void
     {
-//        if ($event->time->second % 300 !== 0) {
-//            return;
-//        }
-//
-//        if ($event->time->hour % 2 !== 0) { // Runs at hour 0, 2, 4, etc.
-//            return;
-//        }
-//
-//        if ($event->time->hour % 2 !== 0) { // Runs at hour 0, 2, 4, etc.
-//            info('Pulse Backup: returning on '.$event->time->hour);
-//            return;
-//        }
-
-//        info('Running Pulse Backup: '.$event->time->hour);
         if ($event->time !== $event->time->startOfDay()->addHours(2)) {
-            info('Returning on: '.$event->time .' - '.$event->time->startOfDay()->addHours(2));
+            info('Pulse Backup: returning on '.$event->time);
             return;
         }
 
-        info('Running on: '.$event->time .' - '.$event->time->startOfDay()->addHours(2));
-
-        //        if ($event->time !== $event->time->startOfDay()->addHours(2)) {
-//            return;
-//        }
+        info('Pulse Backup: running on '.$event->time);
 
         Pulse::set('backups', 'backup-statuses', json_encode(SpatieLaravelBackup::getBackupDestinationStatusData()));
 
