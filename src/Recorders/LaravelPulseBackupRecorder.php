@@ -26,6 +26,8 @@ class LaravelPulseBackupRecorder
             return;
         }
 
+        info('Running Pulse Backup: '.$event->time->hour);
+
         //        if ($event->time !== $event->time->startOfDay()->addHours(2)) {
 //            return;
 //        }
