@@ -16,7 +16,7 @@ class Backups extends Card
             return json_decode($backups->value, associative: true, flags: JSON_THROW_ON_ERROR);
         })->toArray();
 
-        return View::make('backup-pulse::livewire.backups', [
+        return View::make('pulse-backup::livewire.backups', [
             'backups' => $backups,
         ]);
     }

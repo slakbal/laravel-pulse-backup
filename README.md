@@ -8,10 +8,10 @@ Add to composer.json:
 
 ```diff
     "repositories": [
-        {
+        "laravel-pulse-backup": {
             "type": "vcs",
-            "url": "slakbal/laravel-pulse-backup"
-        }
+            "url": "https://github.com/slakbal/laravel-pulse-backup"
+        },
     ],
     "require": {
         ...
@@ -38,7 +38,7 @@ php artisan vendor:publish --tag="backup-pulse-views"
 
 ## Register the recorder
 
-To run the checks you must add the LaravelBackupPulseRecorder to the pulse.php file.</p>
+To run the checks you must add the LaravelPulseBackupRecorder to the pulse.php file.</p>
 
 ```diff
 return [
@@ -50,7 +50,7 @@ return [
 ]
 ```
 
-You also need to be running the <a href="https://laravel.com/docs/10.x/pulse#dashboard-cards">pulse:check</a> command. It will only do the checks once a day at midnight.
+You also need to be running the <a href="https://laravel.com/docs/10.x/pulse#dashboard-cards">pulse:check</a> command. It will only do the checks once a day at startOfDay + 2 hours.
 
 ## Add to your dashboard
 

@@ -7,12 +7,12 @@ use Slakbal\LaravelPulseBackup\Livewire\Backups;
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
 
-class LaravelBackupPulseServiceProvider extends PackageServiceProvider
+class LaravelPulseBackupServiceProvider extends PackageServiceProvider
 {
     public function configurePackage(Package $package): void
     {
         $package
-            ->name('backup-pulse')
+            ->name('pulse-backup')
             ->hasViews();
     }
 
