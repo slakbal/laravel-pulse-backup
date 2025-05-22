@@ -6,6 +6,7 @@ A Laravel Pulse card to monitor the health of the spatie backups.
 
 Add to composer.json:
 
+Prod
 ```diff
     "repositories": [
         "laravel-pulse-backup": {
@@ -16,6 +17,23 @@ Add to composer.json:
     "require": {
         ...
         "slakbal/laravel-pulse-backup": "dev-main"
+    },
+```
+
+Dev
+```diff
+    "repositories": {
+        "local": {
+            "type": "path",
+            "url": "./packages/*",
+            "options": {
+                "symlink": true
+            }
+        }
+    },
+    "require": {
+        ...
+        "slakbal/laravel-pulse-backup": "@dev"
     },
 ```
 
